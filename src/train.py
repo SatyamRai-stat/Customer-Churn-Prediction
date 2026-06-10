@@ -12,26 +12,32 @@ def train_models():
     )
 
     models = {
-        "Logistic Regression":
-            LogisticRegression(max_iter=1000),
+    "Logistic Regression":
+        LogisticRegression(
+            max_iter=1000,
+            class_weight="balanced"
+        ),
 
-        "Decision Tree":
-            DecisionTreeClassifier(random_state=42),
+    "Decision Tree":
+        DecisionTreeClassifier(
+            random_state=42
+        ),
 
-        "Random Forest":
-            RandomForestClassifier(
-                n_estimators=200,
-                random_state=42
-            ),
+    "Random Forest":
+        RandomForestClassifier(
+            n_estimators=200,
+            random_state=42,
+            class_weight="balanced"
+        ),
 
-        "XGBoost":
-            XGBClassifier(
-                random_state=42
-            )
-    }
+    "XGBoost":
+        XGBClassifier(
+            random_state=42
+        )
+}
     
     trained_models={}
-    for name, model in models.item():
+    for name, model in models.items():
         model.fit(X_train,y_train)
         trained_models[name]=model
     return trained_models
