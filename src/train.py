@@ -6,16 +6,6 @@ from xgboost import XGBClassifier
 from src.data_loader import get_train_test_data
 
 def train_models():
-    X_train,X_test,y_train,y_test=get_train_test_data()
-    from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
-
-from data_loader import get_train_test_data
-
-
-def train_models():
 
     X_train, X_test, y_train, y_test = (
         get_train_test_data()
