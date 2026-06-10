@@ -9,7 +9,7 @@ def get_train_test_data():
     df=preprocess_data(df)
 
     X=df.drop('churn',axis=1)
-    y=df['chrun']
+    y=df['churn']
     
     return train_test_split(X,y,random_state=42,test_size=0.20,stratify=y)
 
