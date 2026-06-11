@@ -247,18 +247,43 @@ html, body,
     border-color: rgba(124,58,237,0.7) !important;
     box-shadow: 0 0 0 3px rgba(124,58,237,0.18) !important;
 }
-/* Dropdown list dark */
+/* ─ DROPDOWN LIST ─ */
 [data-testid="stSelectbox"] ul,
 [data-baseweb="popover"] ul,
-[data-baseweb="menu"] {
+[data-baseweb="menu"],
+[data-baseweb="popover"] [data-baseweb="menu"] {
     background: #130D22 !important;
-    border: 1px solid rgba(124,58,237,0.25) !important;
+    border: 1px solid rgba(124,58,237,0.3) !important;
     border-radius: 12px !important;
+    padding: 6px !important;
 }
-[data-baseweb="menu"] li:hover,
-[data-baseweb="option"]:hover {
-    background: rgba(124,58,237,0.2) !important;
+/* Every option item */
+[data-baseweb="menu"] li,
+[data-baseweb="option"],
+[data-baseweb="menu"] [role="option"],
+[data-baseweb="popover"] li {
+    background: transparent !important;
     color: #E8E8FF !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+}
+/* Hovered option */
+[data-baseweb="menu"] li:hover,
+[data-baseweb="option"]:hover,
+[data-baseweb="menu"] [role="option"]:hover {
+    background: rgba(124,58,237,0.25) !important;
+    color: #fff !important;
+}
+/* Selected/active option */
+[data-baseweb="menu"] [aria-selected="true"] {
+    background: rgba(124,58,237,0.15) !important;
+    color: #C4B5FD !important;
+}
+/* Arrow icon in selectbox */
+[data-testid="stSelectbox"] svg {
+    fill: rgba(196,181,253,0.6) !important;
 }
 /* Number input — fix white background & invisible text */
 [data-testid="stNumberInput"] div[data-baseweb="input"],
